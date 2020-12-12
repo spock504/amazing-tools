@@ -78,3 +78,5 @@ zeroFilling = (text) => {
     const fullText = "00" + text
     return fullText.substr(-2, 2)
 }
+
+
