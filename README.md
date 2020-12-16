@@ -1,10 +1,16 @@
+<!--
+ * @Author: liujian
+ * @Date: 2020-11-06 14:24:49
+ * @Description: file content
+ * @LastEditors: liujian
+ * @LastEditTime: 2020-12-16 09:33:19
+-->
 # amazing-tools
-record: 工作中使用的一些方法以及有意思的问题解决方案
+工作中使用的一些方法以及有意思的问题解决方案
 > 两位小数正则校验
-判断是否安卓 : navigator.userAgent 
-时间格式化
+判断是否安卓 : navigator.userAgent
 
-
+## js
 
 ### deploy.js
 > 打包上传SSH文件
@@ -49,3 +55,13 @@ copyInputValue = () => {
 ```
 
 `setSelectionRange(start: number, end: number)  // 兼容 ios 和 IE `
+
+3. 前端处理大量数据
+
+- 分页 防抖  `lageData.html`
+- worker `worker`
+
+
+
+## css
+    

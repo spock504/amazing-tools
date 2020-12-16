@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css 自适应</title>
+    <div class="app">
+        <div class="header">toubu</div>
+        <div class="content">哈nnnnnn</div>
+    </div>
+
+    <style>
+        html {
+            /* 设备宽度 320px vw  1vw = 320/100 = 3.2px   100px = 3.2*100/3.2 =  100/3.2 */
+            font-size: 26.667vw;
+        }
+
+        html,
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        .app {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .header {
+            height: 0.45rem;
+            background-color: #00b38a;
+            font-size: 0.2rem;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .content {
+            font-size: 0.2rem;
+        }
+    </style>
+</head>
+
+<body>
+
+</body>
+
+</html>

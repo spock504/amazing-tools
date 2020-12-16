@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>前端处理大量数据</title>
+</head>
+
+<body>
+    <div id="scrollBox" style="height:300px;background-color:pink;overflow: scroll;width: 300px;">
+        <div>十三水...</div>
+        <div>十三水..</div>
+        <div>十三水.</div>
+        <div>十三水</div>
+        <div>十三水</div>
+        <div>十三水</div>
+        <div>十三水</div>
+        <div>十三水</div>
+        <div>十三水</div>
+        <div>十三水</div>
+        <div>十三水</div>
+        <div>十三水</div>
+        <div>十三水</div>
+        <div>十三水</div>
+        <div>十三水</div>
+        <div>十三水</div>
+        <div>十三水</div>
+        <div>十三水</div>
+    </div>
+    <script>
+        // 1. 判断滚动到底部，通过滚动高度跟滚动边框的高度比较
+        const scrollDom = document.querySelector('#scrollBox')
+        scrollDom.addEventListener("scroll", debounce(onScrollHandle, 300));
+        function onScrollHandle(event) {
+            const clientHeight = event.target.clientHeight // 区域内容的高度
+            const scrollHeight = event.target.scrollHeight // 滚动内容的总高度（包括未显示的部分） 
+            const scrollTop = event.target.scrollTop
+            const isBottom = (clientHeight + scrollTop === scrollHeight) // boolean
+            // console.log('ssss', clientHeight, scrollTop, scrollHeight);
+            if (isBottom) {
+                console.log('到底啦');
+                setTimeout(() => {
+                    console.log('到底啦0000');
+                }, 300)
+            }
+        }
+
+        // 2. 防抖
+        function debounce(fn, delay) {
+            let timeout
+            return function () {
+                const that = this
+                const args = arguments
+                if (timeout) clearTimeout(timeout)
+                timeout = setTimeout(() => {
+                    fn.apply(that, arguments)
+                }, delay);
+            }
+        }
+
+        // 3. 搜索
+        function searchData(value) {
+            const data = [{ title: '111' }, { title: '222' }]
+            const reg = new RegExp(value, 'gi')
+            const filterData = data.filter((item, i) => {
+                // 采用正则来做匹配
+                return reg.test(item.title)
+            })
+            // console.log('filterData', filterData);
+        }
+        searchData('11')
+
+    </script>
+</body>
+
+</html>
